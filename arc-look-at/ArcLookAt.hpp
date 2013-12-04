@@ -40,7 +40,7 @@
 #include <glm/gtc/matrix_inverse.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-// Forward declaration of ArcBall
+// Forward declaration of ArcBall in its CPM namespace.
 namespace CPM_ARC_BALL_NS {
   class ArcBall;
 }
@@ -73,6 +73,10 @@ public:
   /// Dollys the camera towards(negative) / away(positive) from the look at
   /// point.
   void doZoom(float camZoom);
+
+  /// Uses a custom function to determine camera zoom. Downwards and to the
+  /// right increases size, upwards or to the left decreases size
+  void doZoom(const glm::vec2& ssPos);
 
   /// Retrieves the camera's distance away from the look at point.
   void getCamDistance();
