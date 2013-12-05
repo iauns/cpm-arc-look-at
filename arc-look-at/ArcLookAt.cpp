@@ -91,7 +91,6 @@ void ArcLookAt::doZoom(const glm::vec2& ssPos)
   mCamDistance = mReferenceCamDistance + (delta.x) * xScale + (-delta.y) * yScale;
 }
 
-
 //------------------------------------------------------------------------------
 glm::mat4 ArcBall::getWorldViewTransform() const
 {

@@ -79,10 +79,10 @@ public:
   void doZoom(const glm::vec2& ssPos);
 
   /// Retrieves the camera's distance away from the look at point.
-  void getCamDistance();
+  void getCamDistance() const   {return mCamDistance;}
 
   /// Retrieves the current lookat point.
-  glm::vec2 getLookAt();
+  glm::vec3 getLookAt() const   {return mCamLookAt;}
 
   /// Retrieves the world transformation for the camera (looking down
   /// negative z).
