@@ -78,6 +78,12 @@ public:
   /// right increases size, upwards or to the left decreases size
   void doZoom(const glm::vec2& ssPos);
 
+  /// Implements autoview on a bounding box. Implemented just like SCIRun 4's
+  /// autoview in Dataflow/Modules/Render/ViewWindow.cc.
+  /// This function will change the lookat point to the center of the bounding
+  /// box.
+  void autoview();
+
   /// Retrieves the camera's distance away from the look at point.
   void getCamDistance() const   {return mCamDistance;}
 

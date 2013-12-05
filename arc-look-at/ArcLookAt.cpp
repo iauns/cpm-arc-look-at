@@ -107,5 +107,7 @@ glm::mat4 ArcBall::getWorldViewTransform() const
   return finalTrafo;
 }
 
+//------------------------------------------------------------------------------
+
 } // namespace CPM_ARC_LOOK_AT_NS
 
