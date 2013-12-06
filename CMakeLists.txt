@@ -46,6 +46,12 @@ CPM_AddModule("arc_ball"
   GIT_TAG "1.0.0"
   FORWARD_DECLARATION TRUE)
 
+# ++ MODULE: Axis aligned bounding box
+CPM_AddModule("glm_aabb"
+  GIT_REPOSITORY "https://github.com/iauns/cpm-glm-aabb"
+  GIT_TAG "1.0.0"
+  FORWARD_DECLARATION TRUE)
+
 # This call will ensure all include directories and definitions are present
 # in the target. These correspond to the modules that we added above.
 CPM_InitModule(${CPM_MODULE_NAME})
