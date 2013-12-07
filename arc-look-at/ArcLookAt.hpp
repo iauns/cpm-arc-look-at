@@ -40,7 +40,7 @@
 #include <glm/gtc/matrix_inverse.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-#include <glm-aabb/AABB.h>
+#include <glm-aabb/AABB.hpp>
 
 // Forward declaration of ArcBall in its CPM namespace.
 namespace CPM_ARC_BALL_NS {
