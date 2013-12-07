@@ -64,8 +64,8 @@ CPM_InitModule(${CPM_MODULE_NAME})
 # Globbing has some downsides, but the advantages outweigh the
 # disadvantages.
 file (GLOB Sources
-  "arc-ball/*.cpp"
-  "arc-ball/*.hpp"
+  "arc-look-at/*.cpp"
+  "arc-look-at/*.hpp"
   )
 
 #-----------------------------------------------------------------------
