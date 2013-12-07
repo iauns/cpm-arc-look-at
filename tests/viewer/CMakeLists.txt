@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.11 FATAL_ERROR)
-project(SpireViewer)
+project(LookAtCameraViewer)
 
 #-----------------------------------------------------------------------
 # Configure OpenGL
@@ -37,6 +37,10 @@ if (NOT EXISTS ${CPM_DIR}/CPM.cmake)
   endif()
 endif()
 include(${CPM_DIR}/CPM.cmake)
+
+# ++ MODULE: Look at camera
+CPM_AddModule("look_at"
+  SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../..")
 
 # ++ MODULE: Spire
 CPM_AddModule("spire"

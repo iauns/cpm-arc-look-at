@@ -30,6 +30,7 @@
 /// \date   April 2013
 
 #include "ArcLookAt.hpp"
+#include <arc-ball/ArcBall.hpp>
 
 namespace CPM_ARC_LOOK_AT_NS {
 
@@ -108,6 +109,10 @@ glm::mat4 ArcBall::getWorldViewTransform() const
 }
 
 //------------------------------------------------------------------------------
+void ArcBall::autoview(const CPM_GLM_AABB_NS::AABB& aabb)
+{
+  
+}
 
 } // namespace CPM_ARC_LOOK_AT_NS
 

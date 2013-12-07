@@ -40,6 +40,8 @@
 #include <glm/gtc/matrix_inverse.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+#include <glm-aabb/AABB.h>
+
 // Forward declaration of ArcBall in its CPM namespace.
 namespace CPM_ARC_BALL_NS {
   class ArcBall;
@@ -82,7 +84,7 @@ public:
   /// autoview in Dataflow/Modules/Render/ViewWindow.cc.
   /// This function will change the lookat point to the center of the bounding
   /// box.
-  void autoview();
+  void autoview(const CPM_GLM_AABB_NS::AABB& aabb);
 
   /// Retrieves the camera's distance away from the look at point.
   void getCamDistance() const   {return mCamDistance;}
