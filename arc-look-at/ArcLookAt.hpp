@@ -87,7 +87,7 @@ public:
   void autoview(const CPM_GLM_AABB_NS::AABB& aabb);
 
   /// Retrieves the camera's distance away from the look at point.
-  void getCamDistance() const   {return mCamDistance;}
+  glm::float_t getCamDistance() const   {return mCamDistance;}
 
   /// Retrieves the current lookat point.
   glm::vec3 getLookAt() const   {return mCamLookAt;}
