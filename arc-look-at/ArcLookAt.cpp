@@ -66,8 +66,8 @@ void ArcLookAt::doPan(const glm::vec2& ssPos)
 
   glm::mat4 camRot = mArcBall->getTransformation();
   glm::vec3 translation = 
-        static_cast<glm::vec3>(camRot[0].xyz()) * trans.x
-      + static_cast<glm::vec3>(camRot[1].xyz()) * trans.y;
+        static_cast<glm::vec3>(camRot[0]) * trans.x
+      + static_cast<glm::vec3>(camRot[1]) * trans.y;
   mCamAccumPosNow = mReferenceLookAt + translation;
 }
 
@@ -106,7 +106,7 @@ glm::mat4 ArcLookAt::getWorldViewTransform() const
   // NOTE: We are translating both the lookat and the eye point.
   // Eyepoint is a function of the lookat, the camera transform, and the
   // camera distance.
-  finalTrafo[3].xyz() = mCamLookAt + static_cast<glm::vec3>(camRot[2].xyz()) * mCamDistance;
+  finalTrafo[3].xyz() = mCamLookAt + static_cast<glm::vec3>(camRot[2]) * mCamDistance;
   return finalTrafo;
 }
 
