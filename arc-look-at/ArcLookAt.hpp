@@ -33,9 +33,9 @@
 #define IAUNS_ARC_LOOK_AT_H
 
 #include <stdint.h>
+#include <memory>
 
 #include <glm/glm.hpp>
-#include <glm/gtc/quaternion.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtc/matrix_inverse.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -74,7 +74,7 @@ public:
 
   /// Dollys the camera towards(negative) / away(positive) from the look at
   /// point.
-  void doZoom(float camZoom);
+  void doZoom(glm::float_t camZoom);
 
   /// Uses a custom function to determine camera zoom. Downwards and to the
   /// right increases size, upwards or to the left decreases size
@@ -100,13 +100,13 @@ private:
   std::unique_ptr<ArcBall>  mArcBall;
 
   glm::vec3                 mCamLookAt;     ///< Current lookat position.
-  float                     mCamDistance;   ///< Distance from look-at.
+  glm::float_t              mCamDistance;   ///< Distance from look-at.
 
   // The following are reference variables set when doReferenceDown is called.
   glm::vec2                 mReferenceScreenPos;
   glm::vec3                 mReferenceLookAt;
   glm::mat4                 mReferenceTransform;
-  float                     mReferenceCamDistance;
+  glm::float_t              mReferenceCamDistance;
 };
 
 } // namespace CPM_ARC_LOOK_AT_NS 
