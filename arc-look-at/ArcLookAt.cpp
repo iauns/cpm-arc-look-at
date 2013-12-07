@@ -68,7 +68,7 @@ void ArcLookAt::doPan(const glm::vec2& ssPos)
   glm::vec3 translation = 
         static_cast<glm::vec3>(camRot[0]) * trans.x
       + static_cast<glm::vec3>(camRot[1]) * trans.y;
-  mCamAccumPosNow = mReferenceLookAt + translation;
+  mCamLookAt = mReferenceLookAt + translation;
 }
 
 //------------------------------------------------------------------------------
@@ -88,7 +88,7 @@ void ArcLookAt::doZoom(const glm::vec2& ssPos)
 {
   // Use distance delta from center of screen to control zoom.
   // Will need a new variable to control this.
-  spire::V2 delta = ssPos - mReferenceScreenPos;
+  glm::vec2 delta = ssPos - mReferenceScreenPos;
   glm::float_t xScale = 4.0f;
   glm::float_t yScale = 4.0f;
   mCamDistance = mReferenceCamDistance + (delta.x) * xScale + (-delta.y) * yScale;
