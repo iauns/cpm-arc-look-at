@@ -32,11 +32,13 @@
 #include "ArcLookAt.hpp"
 #include <arc-ball/ArcBall.hpp>
 
+namespace ArcBall = CPM_ARC_BALL_NS;
+
 namespace CPM_ARC_LOOK_AT_NS {
 
 //------------------------------------------------------------------------------
 ArcLookAt::ArcLookAt() :
-    mArcBall(new ArcBall(glm::vec3(0.0f, 0.0f, 0.0f), 1.0f)),
+    mArcBall(new ArcBall::ArcBall(glm::vec3(0.0f, 0.0f, 0.0f), 1.0f)),
     mCamDistance(0.0f),
     mReferenceCamDistance(0.0f)
 {
@@ -93,7 +95,7 @@ void ArcLookAt::doZoom(const glm::vec2& ssPos)
 }
 
 //------------------------------------------------------------------------------
-glm::mat4 ArcBall::getWorldViewTransform() const
+glm::mat4 ArcLookAt::getWorldViewTransform() const
 {
   glm::mat4 camRot      = mArcBall->getTransformation();
   glm::mat4 finalTrafo  = camRot;
@@ -109,7 +111,7 @@ glm::mat4 ArcBall::getWorldViewTransform() const
 }
 
 //------------------------------------------------------------------------------
-void ArcBall::autoview(const CPM_GLM_AABB_NS::AABB& aabb)
+void ArcLookAt::autoview(const CPM_GLM_AABB_NS::AABB& aabb)
 {
   
 }

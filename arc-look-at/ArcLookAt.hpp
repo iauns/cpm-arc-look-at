@@ -97,7 +97,7 @@ public:
   glm::mat4 getWorldViewTransform() const;
 
 private:
-  std::unique_ptr<ArcBall>  mArcBall;
+  std::unique_ptr<CPM_ARC_BALL_NS::ArcBall>  mArcBall;
 
   glm::vec3                 mCamLookAt;     ///< Current lookat position.
   glm::float_t              mCamDistance;   ///< Distance from look-at.
