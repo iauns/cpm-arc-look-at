@@ -39,7 +39,7 @@ namespace CPM_ARC_LOOK_AT_NS {
 //------------------------------------------------------------------------------
 ArcLookAt::ArcLookAt() :
     mArcBall(new ArcBall::ArcBall(glm::vec3(0.0f, 0.0f, 0.0f), 1.0f)),
-    mCamDistance(0.0f),
+    mCamDistance(3.0f),
     mReferenceCamDistance(0.0f)
 {
 }
