@@ -57,6 +57,8 @@ void ArcLookAt::doReferenceDown(const glm::vec2& ssPos)
   mReferenceScreenPos   = ssPos;
   mReferenceTransform   = getWorldViewTransform();
   mReferenceCamDistance = mCamDistance;
+
+  mArcBall->beginDrag(ssPos);
 }
 
 //------------------------------------------------------------------------------
