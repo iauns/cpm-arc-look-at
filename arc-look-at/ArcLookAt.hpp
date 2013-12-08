@@ -84,6 +84,7 @@ public:
   /// autoview in Dataflow/Modules/Render/ViewWindow.cc.
   /// This function will change the lookat point to the center of the bounding
   /// box.
+  /// \p fov is expected to be in radians.
   void autoview(const CPM_GLM_AABB_NS::AABB& aabb, float fov);
 
   /// Retrieves the camera's distance away from the look at point.

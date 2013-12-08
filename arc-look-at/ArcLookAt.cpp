@@ -131,11 +131,19 @@ void ArcLookAt::autoview(const CPM_GLM_AABB_NS::AABB& bbox, float fov)
     w = glm::length(bb.getDiagonal());
   }
 
-  glm::mat4 worldTrafo = getWorldViewTransform();
-  glm::vec3 lookdir    = worldTrafo[2].xyz();
-  glm::float_t scale   = 1.0 / (2*tan(fov/2.0*(glm::pi<glm::float_t>() / 180.0)));
-  glm::float_t length  = w * scale;
-  mCamDistance = length;
+  mCamLookAt = bbox.getCenter();
+
+  // We are calculating the distance the camera would need to be away from
+  // the length of the diagonal of the bbox. See Van Dam, Foley, third edition
+  // page 304:
+
+  //    AC = f*tan(O(v)/2)
+  // => f = AC / tan(O(v)/2)
+  // Where AC is half the size of the diagonal.
+  // So, takning into account half the size:
+  // => f = AC / (2 * tan(O(v) / 2)
+
+  mCamDistance = w / (2 * tan(fov / 2.0));
 }
 
 } // namespace CPM_ARC_LOOK_AT_NS
