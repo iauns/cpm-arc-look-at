@@ -121,13 +121,13 @@ void ArcLookAt::autoview(const CPM_GLM_AABB_NS::AABB& bbox, float fov)
   glm::vec3 diag(bbox.getDiagonal());
   double w = glm::length(diag);
 
-  if( w < 0.000001 )
+  if (w < 0.000001)
   {
-    AABB bb;
+    CPM_GLM_AABB_NS::AABB bb;
     bb.setNull();
-    Vector epsilon(0.001, 0.001, 0.001);
-    bb.extend( bbox.min() - epsilon );
-    bb.extend( bbox.max() + epsilon );
+    glm::vec3 epsilon(0.001, 0.001, 0.001);
+    bb.extend( bbox.getMin() - epsilon );
+    bb.extend( bbox.getMax() + epsilon );
     w = glm::length(bb.getDiagonal());
   }
 
