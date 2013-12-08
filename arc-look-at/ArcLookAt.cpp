@@ -114,9 +114,28 @@ glm::mat4 ArcLookAt::getWorldViewTransform() const
 }
 
 //------------------------------------------------------------------------------
-void ArcLookAt::autoview(const CPM_GLM_AABB_NS::AABB& aabb)
+void ArcLookAt::autoview(const CPM_GLM_AABB_NS::AABB& bbox, float fov)
 {
-  
+  if (bbox.isNull()) return;
+
+  glm::vec3 diag(bbox.getDiagonal());
+  double w = glm::length(diag);
+
+  if( w < 0.000001 )
+  {
+    AABB bb;
+    bb.setNull();
+    Vector epsilon(0.001, 0.001, 0.001);
+    bb.extend( bbox.min() - epsilon );
+    bb.extend( bbox.max() + epsilon );
+    w = glm::length(bb.getDiagonal());
+  }
+
+  glm::mat4 worldTrafo = getWorldViewTransform();
+  glm::vec3 lookdir    = worldTrafo[2].xyz();
+  glm::float_t scale   = 1.0 / (2*tan(fov/2.0*(glm::pi<glm::float_t>() / 180.0)));
+  glm::float_t length  = w * scale;
+  mCamDistance = length;
 }
 
 } // namespace CPM_ARC_LOOK_AT_NS
