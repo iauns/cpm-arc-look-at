@@ -49,7 +49,7 @@ CPM_AddModule("arc_ball"
 # ++ MODULE: Axis aligned bounding box
 CPM_AddModule("glm_aabb"
   GIT_REPOSITORY "https://github.com/iauns/cpm-glm-aabb"
-  GIT_TAG "1.0.0"
+  GIT_TAG "1.0.1"
   USE_EXISTING_VER TRUE
   EXPORT_MODULE TRUE)
 
