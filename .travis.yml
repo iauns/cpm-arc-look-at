@@ -1,16 +1,23 @@
 language: cpp
 compiler:
-  - clang
-  - gcc
+- clang
+- gcc
 before_install:
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-  - sudo apt-get update -qq
-  - sudo apt-get install libosmesa6-dev
-  - sudo apt-get install perceptualdiff
-  - sudo apt-get install imagemagick
-  - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
-  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
-script: "./tests/run-tests.sh"
+- sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+- sudo apt-get update -qq
+- sudo apt-get install libosmesa6-dev
+- sudo apt-get install perceptualdiff
+- sudo apt-get install imagemagick
+- if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
+- if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+script: ./tests/run-tests.sh
+after_success:
+- sudo apt-get --no-install-recommends install doxygen
+- git clone https://github.com/iauns/travis-doxy-helper ./doxy-helper
+- ./doxy-helper/update-doxygen.sh ./.dox ./dox-repo https://github.com/iauns/cpm-arc-look-at
 branches:
   only:
-    - master
+  - master
+env:
+  global:
+    secure: Qau90XZhCxcnf//+ClbcJiBMTvaFgrOISzFVbLtEzBmNR5RALPkv7IFkOzqfkfglQqTz2YUdGG9CPf5QEM8HUYIQv6weG8l+KexTpqhl+VWccYwggD+8asGaFUqe52wYvaPO1TYgJ1SJ1KBjZ75dI5GrOxypSDRl1JWlfz9xnL0=
