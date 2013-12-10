@@ -61,7 +61,9 @@ public:
   virtual ~ArcLookAt();
   
   /// Sets the reference point for upcoming operations.
-  /// Should always be called before any of the 'do' functions below.
+  /// Should be be called before any of the 'do' function below, and acts
+  /// as the 'mouse down' in the mouse input process. The 'do' functions below
+  /// behave like 'mouse move'.
   void doReferenceDown(const glm::vec2& ssPos);
 
   /// Pans the camera based on the reference position, current orientation, and
