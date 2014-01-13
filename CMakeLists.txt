@@ -35,7 +35,7 @@ endif()
 # ++ MODULE: GLM
 CPM_AddModule("GLM"
   GIT_REPOSITORY "https://github.com/iauns/cpm-glm"
-  GIT_TAG "1.0.1"
+  GIT_TAG "1.0.2"
   USE_EXISTING_VER TRUE
   EXPORT_MODULE TRUE    # Use EXPORT_MODULE sparingly. We expose GLM's interface
   )                     # through our own interface hence why we export it.
@@ -43,13 +43,13 @@ CPM_AddModule("GLM"
 # ++ MODULE: arc_ball
 CPM_AddModule("arc_ball"
   GIT_REPOSITORY "https://github.com/iauns/cpm-arc-ball"
-  GIT_TAG "1.0.0"
+  GIT_TAG "1.0.2"
   FORWARD_DECLARATION TRUE)
 
 # ++ MODULE: Axis aligned bounding box
 CPM_AddModule("glm_aabb"
   GIT_REPOSITORY "https://github.com/iauns/cpm-glm-aabb"
-  GIT_TAG "1.0.1"
+  GIT_TAG "1.0.3"
   USE_EXISTING_VER TRUE
   EXPORT_MODULE TRUE)
 
