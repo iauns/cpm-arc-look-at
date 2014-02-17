@@ -43,13 +43,13 @@ CPM_AddModule("GLM"
 # ++ MODULE: arc_ball
 CPM_AddModule("arc_ball"
   GIT_REPOSITORY "https://github.com/iauns/cpm-arc-ball"
-  GIT_TAG "1.0.2"
+  GIT_TAG "1.0.3"
   FORWARD_DECLARATION TRUE)
 
 # ++ MODULE: Axis aligned bounding box
 CPM_AddModule("glm_aabb"
   GIT_REPOSITORY "https://github.com/iauns/cpm-glm-aabb"
-  GIT_TAG "1.0.3"
+  GIT_TAG "1.0.4"
   USE_EXISTING_VER TRUE
   EXPORT_MODULE TRUE)
 
@@ -74,5 +74,4 @@ file (GLOB Sources
 
 # Build the library.
 add_library(${CPM_LIB_TARGET_NAME} ${Sources})
-target_link_libraries(${CPM_LIB_TARGET_NAME} ${CPM_LIBRARIES})
 
